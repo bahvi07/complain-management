@@ -1,0 +1,30 @@
+/*  Main user dashboard custom css */
+    .container-fluid {
+      background: linear-gradient(to bottom, #fcded4, #fff);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      height: 100vh;
+    }
+
+
+/* Mobile-specific styles for the navbar */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1rem; /* Reduce font size for mobile */
+    display: flex;
+    align-items: center;
+    margin-right: 2px;
+    gap: 0.5rem; /* Add spacing between the logo and text */
+  }
+
+  .navbar-brand img {
+    height: 40px; /* Adjust logo size for mobile */
+    width: 40px;
+  }
+.fas{
+    margin: 0;
+    padding: 0;
+}
+  .navbar-toggler {
+    color: white; /* Ensure the toggler icon is visible */
+  }
+}
