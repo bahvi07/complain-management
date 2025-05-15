@@ -1,26 +1,29 @@
-/* Custom css for login page*/
-.custom-body {
-  font-family: 'Poppins', sans-serif;
+/* === LOGIN PAGE ONLY === */
+body.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
   background: linear-gradient(to bottom, #fff6f0, #fff);
 }
 
-/* === Login Card Style === */
+/* === Card === */
 .login-card {
-  max-width: 380px;
+  max-width: 420px;
   width: 100%;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 15px;
   background: #fcded4;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  height: 75vh;
+  /* remove height */
 }
 
-/* === Logo === */
+
 .login-logo {
   width: 80px;
 }
 
-/* === Title === */
 .login-title {
   font-family: 'Cinzel Decorative', cursive;
   color: #FF4500;
@@ -28,32 +31,44 @@
   text-shadow: 1px 1px #ddd;
 }
 
-/* === Form Container === */
+/* === Form === */
 .form-wrapper {
-  border: 1px solid black;
+  width: 100%;
+  padding: 2rem;
   border-radius: 25px;
-  padding: 2.5rem 1.80rem;
-  height: 300px;
+  border: 1px solid #ccc;
+  background: #fff;
+  /* remove height */
 }
 
-/* === Form Heading === */
 .form-heading {
   margin-bottom: 1.5rem;
   font-weight: 600;
   color: #333;
   text-shadow: 2px 2px 4px #fff;
 }
-
-/* === Input tel === */
-input[type="tel"]{
-    margin-left: 15px;
-    width: 90%;
+input[type="tel"] {
+  margin-left: 15px;
+  width: 90%;
 }
-/* === Input Focus === */
-input[type="tel"]:focus {
-  border-bottom: 2px solid #FF4500 !important;
+.otp-input {
+  width: 40px;
+  height: 50px;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #FF4500;
   background-color: transparent;
   box-shadow: none;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+input[type="tel"]:focus,
+.otp-input:focus {
+  border-bottom: 2px solid #FD3A69!important;
+  background-color: transparent;
+  box-shadow: none;
+}
+label.form-label {
+  margin-left: 15px;
 }
 
 /* === Login Button === */
@@ -66,78 +81,75 @@ input[type="tel"]:focus {
   font-weight: 600;
   transition: opacity 0.3s ease;
 }
-
 .login-btn:hover {
   opacity: 0.9;
 }
 
- label.form-label{
-    margin-left: 15px;
- }
-
-/* modal css*/
+/* === Modal === */
 .modal-content {
-      border-radius: 20px; 
-        background: #fff5f2; 
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); 
-        max-width: 400px;
-        margin: 0 auto;
-        width: 100%;
+  border-radius: 20px;
+  background: #fff5f2;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
 }
-    .modal.fade .modal-dialog {
+.modal.fade .modal-dialog {
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
-#otp:focus{
-   background-color: transparent;
-  box-shadow: none;
+@media (max-width: 767px) {
+  .login-card {
+    margin: 1rem;
+  }
+  .form-wrapper {
+    height: auto;
+    padding: 1.5rem;
+  }
 }
-.otp-input:focus{
-  background-color: transparent;
-  box-shadow: none;
-}
-/* === Desktop Specific Styles === */
+
+/* === Responsive (Desktop) === */
 @media (min-width: 768px) {
   .login-card {
     height: 85vh;
-    padding: 2rem; /* Added padding */
+    padding: 2rem;
   }
-
   .form-wrapper {
     max-width: 400px;
     margin: 0 auto;
     height: 60vh;
     border-radius: 30px;
-    padding: 3rem 2rem; /* Increased padding */
+    padding: 3rem 2rem;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   }
-
   .form-heading {
     font-size: 1.7rem;
     text-align: center;
     margin-bottom: 2rem;
-    padding: 0.5rem; /* Added padding */
+    padding: 0.5rem;
   }
-
   label.form-label {
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 0.5rem; /* Adjusted margin */
-    padding-left: 0.2rem; /* Added slight padding for alignment */
-    display: block; /* Ensures proper spacing above the input */
+    margin-bottom: 0.5rem;
+    padding-left: 0.2rem;
+    display: block;
   }
-
   input[type="tel"] {
     font-size: 1.1rem;
-    padding: 1rem; /* Increased padding */
+    padding: 1rem;
   }
-
   .login-btn {
     font-size: 1.2rem;
-    padding: 0.5rem; /* Increased padding */
+    padding: 0.5rem;
   }
-
   .login-title {
     font-size: 1.3rem;
     font-weight: bold;
+  }
+}
+@media (max-width: 576px) {
+  .otp-input {
+    width: 35px;
+    height: 45px;
+    font-size: 1.2rem;
   }
 }

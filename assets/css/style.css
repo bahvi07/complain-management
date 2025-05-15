@@ -1,0 +1,95 @@
+/* === GLOBAL RESET === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #fff;
+  }
+  
+  /* === UTILITY CLASSES === */
+  .text-orange {
+    color: #FF4500;
+  }
+  .bg-orange-gradient {
+    background: linear-gradient(to right, #FF7E5F, #FD3A69);
+    color: white;
+  }
+  .btn-rounded {
+    border-radius: 50px;
+  }
+  .shadow-sm {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  .responsive-logo {
+    max-width: 80px;
+    height: auto;
+  }
+  
+  /* === SPLASH PAGE === */
+  .splash-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffeae3;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .splash-logo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 1s, opacity 1s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .splash-tagline {
+    margin-top: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #FF4500;
+  }
+  .splash-logo.fade-out {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  
+  /* === FOOTER === */
+  .custom-footer {
+    background-color: #fff3ef;
+    font-size: 0.9rem;
+    color: #555;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: auto;
+  }
+  
+  /* === RESPONSIVE === */
+  @media (min-width: 768px) {
+    .splash-logo {
+      width: 250px;
+      height: 250px;
+    }
+    .splash-tagline {
+      font-size: 2rem;
+    }
+  }
+  @media (max-width: 767px) {
+    .splash-logo {
+      width: 150px;
+      height: 150px;
+    }
+    .splash-tagline {
+      font-size: 1.2rem;
+    }
+  }
+  

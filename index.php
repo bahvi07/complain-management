@@ -1,73 +1,23 @@
-<?php include '../complain-system/includes/headers.php'?>
+<?php include '../complain-management/includes/headers.php'; ?>
+<!-- No extra <body> tag here -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Index Page</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: rgb(255, 234, 227);
-      transition: opacity 1s ease-in-out;
-    }
+<div class="splash-wrapper">
+  <img class="splash-logo" src="../complain-management/assets/images/general_images/Bjplogo.jpg" alt="Logo">
+  <p class="splash-tagline">Welcome to Vidhayak Seva Kendra</p>
+</div>
 
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 50%;
-      transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-    }
+<?php include '../complain-management/includes/footers.php'; ?>
 
-    .tagline {
-      margin-top: 1rem;
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #FF4500;
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-    }
-
-    .fade-out {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-
-    /* Mobile view adjustments */
-    @media (max-width: 768px) {
-      img {
-        width: 150px;
-        height: 150px;
-      }
-
-      .tagline {
-        font-size: 1.2rem; /* Adjust tagline size for mobile */
-      }
-    }
-  </style>
-
-  <script>
+<!-- Splash Redirect Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
-      // Animate image and body before redirect
-      document.querySelector('img').classList.add('fade-out');
-      document.body.style.opacity = '0';
+      document.querySelector('.splash-logo').classList.add('fade-out');
+      document.querySelector('.splash-wrapper').style.opacity = '0';
 
-      // Delay redirect until animation completes
       setTimeout(() => {
         window.location.href = "auth/login.php";
-      }, 1000); // match the CSS animation duration
-    }, 2000); // initial wait time before animation starts
-  </script>
-</head>
-<body>
-  <img src="../complain-system/assets/images/general_images/Bjplogo.jpg" alt="Logo">
-  <p class="tagline">Welcome to Vidhayak Seva Kendra</p>
-</body>
-</html>
+      }, 1000);
+    }, 2000);
+  });
+</script>
